@@ -11,8 +11,8 @@
 	<groupId>com.julianpagano</groupId>
 	<artifactId>ravnicaquests</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>ravnicaquests</name>
+	<description></description>
 
 	<properties>
 		<java.version>1.8</java.version>
