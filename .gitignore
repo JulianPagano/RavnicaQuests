@@ -24,5 +24,7 @@ HELP.md
 /nbdist/
 /.nb-gradle/
 /build/
+
+### VSCode ###
 .vscode/settings.json
 .vscode/launch.json
