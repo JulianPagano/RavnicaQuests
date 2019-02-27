@@ -93,7 +93,7 @@
         <div class="col-lg-12 text-center">
           <h1 class="mt-5" id="start-quest-button"><button type="button" class="btn btn-primary btn-lg btn-block">Start your adventure!</button></h1>
           <div class="loader" id="loader" style="display:none"></div>
-          <p class="lead" id="quest-text" style="display:none">Complete with pre-defined file paths and responsive navigation!</p>
+          <p class="lead" id="quest-text" style="display:none"></p>
         </div>
       </div>
     </div>
@@ -122,17 +122,18 @@
   
     <script type="text/javascript">
 
-      $('#start-quest-button').on('click', function(event) {
-        event.preventDefault(); // To prevent following the link (optional)
-        startQuest();
-      });
-
       $(document)
         /* Esconder el loader animado al completar la consulta Ajax */
         .on({
             ajaxStop: function() {
               $('#loader').hide();
             }
+        });
+
+      $('#start-quest-button')
+        .on('click', function(event) {
+          event.preventDefault(); // To prevent following the link (optional)
+          startQuest();
         });
 
       function startQuest() {
@@ -142,17 +143,11 @@
         
         var request = $.ajax({
           type : "POST",
-          contentType : "application/json",
           url : "${home}startQuest",
-          dataType : 'json',
           success : function(response) {
             console.log("SUCCESS: ", response);
-            $("#quest-text").text(response)
-            /*
-            $.each(data, function(index, value) {
-              $("#quest-text").text(value)
-            });
-            */
+            $("#quest-text").text(response);
+            $('#quest-text').show();
           },
           error : function(e) {
             console.log("ERROR: ", e);
