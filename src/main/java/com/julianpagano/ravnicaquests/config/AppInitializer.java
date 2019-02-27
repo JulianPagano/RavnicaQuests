@@ -11,8 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
 public class AppInitializer extends SpringBootServletInitializer {
 
 	@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(AppInitializer.class);
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(AppInitializer.class);
 	}
 	
 	public static void main(String[] args) {

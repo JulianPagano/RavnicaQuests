@@ -1,4 +1,4 @@
-package com.julianpagano.ravnicaquests.config;
+package com.julianpagano.ravnicaquests;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

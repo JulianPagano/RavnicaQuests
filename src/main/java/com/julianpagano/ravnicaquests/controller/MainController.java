@@ -18,5 +18,5 @@ public class MainController {
 	public String startQuest() {
 		return "You have began your adventure!";
 	}
-	
+
 }

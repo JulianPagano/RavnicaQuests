@@ -137,18 +137,17 @@
 
       function startQuest() {
         
-        $('#quest-button').hide();
+        $('#start-quest-button').hide();
         $('#loader').show();
         
         var request = $.ajax({
           type : "POST",
           contentType : "application/json",
           url : "${home}startQuest",
-          data : JSON.stringify(),
           dataType : 'json',
-          success : function(data) {
-            console.log("SUCCESS: ", data);
-            $("#quest-text").text(data)
+          success : function(response) {
+            console.log("SUCCESS: ", response);
+            $("#quest-text").text(response)
             /*
             $.each(data, function(index, value) {
               $("#quest-text").text(value)
