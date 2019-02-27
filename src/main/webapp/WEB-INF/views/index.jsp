@@ -93,26 +93,11 @@
         <div class="col-lg-12 text-center">
           <h1 class="mt-5" id="start-quest-button"><button type="button" class="btn btn-primary btn-lg btn-block">Start your adventure!</button></h1>
           <div class="loader" id="loader" style="display:none"></div>
+          <h1 class="mt-5" id="quest-title" style="display:none">The lost treasure of The Orzhov</button></h1>
           <p class="lead" id="quest-text" style="display:none"></p>
         </div>
       </div>
     </div>
-
-    <%--
-    <!-- Page Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h1 class="mt-5">A Bootstrap 4 Starter Template</h1>
-          <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
-          <ul class="list-unstyled">
-            <li>Bootstrap 4.2.1</li>
-            <li>jQuery 3.3.1</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    --%>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -139,7 +124,7 @@
       function startQuest() {
         
         $('#start-quest-button').hide();
-        $('#loader').show();
+        $('#loader').fadeOut('fast');
         
         var request = $.ajax({
           type : "POST",
@@ -147,7 +132,8 @@
           success : function(response) {
             console.log("SUCCESS: ", response);
             $("#quest-text").text(response);
-            $('#quest-text').show();
+            $('#quest-title').fadeIn('slow');
+            $('#quest-text').fadeIn('slow');
           },
           error : function(e) {
             console.log("ERROR: ", e);
